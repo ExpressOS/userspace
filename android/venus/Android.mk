@@ -2,9 +2,11 @@ LOCAL_PATH := $(call my-dir)
 
 include $(CLEAR_VARS)
 
-EXPRESSOS_SRC_DIR := /home/mai4/work/expressos/src
+ifeq ($(EXPRESSOS_SRC_DIR),)
+$(error EXPRESSOS_SRC_DIR undefined)
+endif
 
-LOCAL_MODULE_TAGS := optional
+LOCAL_MODULE_TAGS := eng
 
 LOCAL_SRC_FILES := binder.c \
 	fs.c \
